@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cs8vt8efeu1fv"]
+
+[ext_resource type="Script" uid="uid://8vwwiu7kpdkf" path="res://MainInterface/GeminiChat.gd" id="1_chat"]
+[ext_resource type="Theme" uid="uid://b7rp8q4pppfi8" path="res://Assets/Other/DefaultTheme1.tres" id="2_theme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlrqg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="GeminiChat" type="PanelContainer" unique_id=1165374204]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_theme")
+theme_type_variation = &"Panel"
+theme_override_styles/panel = SubResource("StyleBoxFlat_tlrqg")
+script = ExtResource("1_chat")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=763499545]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Layout" type="VBoxContainer" parent="Margin" unique_id=2045897276]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Margin/Layout" unique_id=1864900387]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "Chatbot"
+
+[node name="ApiKey" type="LineEdit" parent="Margin/Layout" unique_id=1913612306]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+placeholder_text = "Gemini API key"
+secret = true
+
+[node name="Transcript" type="RichTextLabel" parent="Margin/Layout" unique_id=344382031]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+scroll_following = true
+selection_enabled = true
+
+[node name="Status" type="Label" parent="Margin/Layout" unique_id=553625740]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Composer" type="HBoxContainer" parent="Margin/Layout" unique_id=818243597]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Message" type="LineEdit" parent="Margin/Layout/Composer" unique_id=1275386808]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Type a message"
+
+[node name="Send" type="Button" parent="Margin/Layout/Composer" unique_id=244088556]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(76, 36)
+layout_mode = 2
+text = "Send"
+
+[node name="Request" type="HTTPRequest" parent="." unique_id=471448872]
+max_redirects = 0
+timeout = 60.0
