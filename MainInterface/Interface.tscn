@@ -3,13 +3,14 @@
 [ext_resource type="Theme" uid="uid://b7rp8q4pppfi8" path="res://Assets/Other/DefaultTheme1.tres" id="1_l33ob"]
 [ext_resource type="Script" uid="uid://cqy5xcijuvsjn" path="res://MainInterface/CustomTabsContainer.gd" id="2_bps3c"]
 [ext_resource type="PackedScene" uid="uid://by36x8mp7s75u" path="res://MainInterface/Vista3D.tscn" id="3_vista"]
+[ext_resource type="PackedScene" uid="uid://cs8vt8efeu1fv" path="res://MainInterface/GeminiChat.tscn" id="4_baesq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ty0te"]
 bg_color = Color(0.1613563, 0.18342489, 0.20917058, 1)
 
 [sub_resource type="FontVariation" id="FontVariation_3ahog"]
 variation_embolden = -0.58
-spacing_glyph = 1
+spacing_glyph = 2
 
 [sub_resource type="FontVariation" id="FontVariation_bps3c"]
 variation_embolden = -0.5
@@ -33,6 +34,9 @@ variation_embolden = -0.7
 [sub_resource type="FontVariation" id="FontVariation_w4mfu"]
 variation_embolden = -0.7
 
+[sub_resource type="FontVariation" id="FontVariation_mj5uc"]
+variation_embolden = -0.7
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn5ri"]
 bg_color = Color(0.16862746, 0.1882353, 0.21176471, 1)
 border_width_left = 3
@@ -49,6 +53,18 @@ corner_radius_bottom_left = 16
 variation_embolden = -0.5
 
 [sub_resource type="FontVariation" id="FontVariation_bn5ri"]
+variation_embolden = -0.5
+
+[sub_resource type="FontVariation" id="FontVariation_baesq"]
+variation_embolden = -0.5
+
+[sub_resource type="FontVariation" id="FontVariation_k5oav"]
+variation_embolden = -0.5
+
+[sub_resource type="FontVariation" id="FontVariation_ge8tr"]
+variation_embolden = -0.5
+
+[sub_resource type="FontVariation" id="FontVariation_aq13o"]
 variation_embolden = -0.5
 
 [node name="Interface" type="Control" unique_id=1326644317]
@@ -116,7 +132,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.92545134, 0.9346601, 0.94398904, 1)
 theme_override_fonts/font = SubResource("FontVariation_3ahog")
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 26
 text = "Health Monitoring Dashboard"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -144,11 +160,6 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
-
-[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer" unique_id=2042191026]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = ExtResource("1_l33ob")
 
 [node name="ContentScreen" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer" unique_id=500109282]
 layout_mode = 2
@@ -484,14 +495,31 @@ popup/item_1/id = 1
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1" unique_id=773655371]
-custom_minimum_size = Vector2(0, 700)
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1" unique_id=1327854523]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer" unique_id=2104490910]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_mj5uc")
+theme_override_font_sizes/font_size = 32
+text = "On Mission"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer" unique_id=804284946]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control" unique_id=773655371]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 0
+offset_right = 1856.0
+offset_bottom = 700.0
 size_flags_horizontal = 3
 theme = ExtResource("1_l33ob")
 theme_override_styles/panel = SubResource("StyleBoxFlat_bn5ri")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel" unique_id=873154214]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel" unique_id=1352462733]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -499,16 +527,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer" unique_id=923891752]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer" unique_id=873154214]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer" unique_id=923891752]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 
-[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer" unique_id=1167551329]
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1167551329]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control" unique_id=1252667831]
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control" unique_id=1252667831]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -521,7 +553,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_l33ob")
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control/Panel" unique_id=539192057]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control/Panel" unique_id=539192057]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -532,7 +564,7 @@ theme_override_font_sizes/font_size = 20
 text = "Astronaut Status"
 horizontal_alignment = 1
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control/Panel" unique_id=1412533543]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control/Panel" unique_id=1412533543]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -541,20 +573,20 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control/Panel/SubViewportContainer" unique_id=2015018264]
+[node name="SubViewport" type="SubViewport" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control/Panel/SubViewportContainer" unique_id=2015018264]
 own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(707, 432)
+size = Vector2i(686, 432)
 render_target_update_mode = 4
 
-[node name="Vista3d" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control/Panel/SubViewportContainer/SubViewport" unique_id=1907492269 instance=ExtResource("3_vista")]
+[node name="Vista3d" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control/Panel/SubViewportContainer/SubViewport" unique_id=1907492269 instance=ExtResource("3_vista")]
 
-[node name="Control2" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer" unique_id=246012808]
+[node name="Control2" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=246012808]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2" unique_id=1178880350]
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2" unique_id=1178880350]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -566,15 +598,16 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel" unique_id=249984052]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel" unique_id=249984052]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.03
+anchor_right = 0.97
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer" unique_id=917226680]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer" unique_id=917226680]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_fonts/font = SubResource("FontVariation_bn5ri")
@@ -582,23 +615,54 @@ theme_override_font_sizes/font_size = 20
 text = "Details"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer" unique_id=1841500423]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer" unique_id=1841500423]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer" unique_id=1686850487]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer" unique_id=1686850487]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1873229668]
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1873229668]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Info"
 
-[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer" unique_id=1473472019]
+[node name="Issue" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=730189596]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_baesq")
+theme_override_font_sizes/font_size = 18
+text = "No Selection"
+
+[node name="Label3" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=902957333]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Requires medical expert?"
+
+[node name="RequiresMed" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1464298050]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_baesq")
+theme_override_font_sizes/font_size = 18
+text = "No Selection"
+
+[node name="Label4" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1252315453]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Suggestions:"
+
+[node name="Suggestions" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=954118112]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_baesq")
+theme_override_font_sizes/font_size = 18
+text = "No Selection"
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer" unique_id=1473472019]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/Control" unique_id=596772151]
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control" unique_id=596772151]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -609,6 +673,112 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_l33ob")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel" unique_id=218918030]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer" unique_id=784628677]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_k5oav")
+theme_override_font_sizes/font_size = 20
+text = "Suggestions"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer" unique_id=349669443]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer" unique_id=659249445]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer/ScrollContainer" unique_id=1473766710]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=191605094]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_ge8tr")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer/ScrollContainer/VBoxContainer/Button" unique_id=733115330]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 0.98
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_aq13o")
+text = "Medium importance: Refrain from doing physically demanding tasks for the next 24h"
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1792944021]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_ge8tr")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer/ScrollContainer/VBoxContainer/Button2" unique_id=1706366074]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 0.98
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_aq13o")
+text = "High importance: Refrain from leaving the ISS for the next 13h"
+vertical_alignment = 1
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=938953427]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("FontVariation_ge8tr")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer/ScrollContainer/VBoxContainer/Button3" unique_id=449285653]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.02
+anchor_right = 0.98
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_aq13o")
+text = "High importance: In case of presenting any symptoms of ill, inmediately notify your Crew Medical Officer"
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer" unique_id=1350390800]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/Control" unique_id=268838273]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GeminiChat" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/Control/Panel" unique_id=1165374204 instance=ExtResource("4_baesq")]
+layout_mode = 1
+extra_context = "You are a medical advisor for a Health Monitoring Dashboard for astronauts while they , you should"
 
 [node name="2" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer" unique_id=1585272247]
 visible = false
