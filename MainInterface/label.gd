@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 ## "What is your angle 0-360 from the ISS"
-@export var persons_angle: int = 180
+@export var persons_angle: int = 90
 
 var sun_position = 0 # défini par axe terre-soleil
 var cable_distance = 20.0

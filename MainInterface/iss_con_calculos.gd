@@ -2,7 +2,7 @@
 extends Node3D
 
 ## 0° = ISS between Earth and Sun (in sunlight) · 180° = behind Earth (in shadow)
-@export_range(0, 360, 1) var angle_degrees: float = 90:
+@export_range(0, 360, 1) var angle_degrees: float = 0:
 	set(value):
 		angle_degrees = value
 		update_iss()

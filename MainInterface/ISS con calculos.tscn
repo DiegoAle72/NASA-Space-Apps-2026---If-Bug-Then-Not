@@ -16,7 +16,7 @@ transform = Transform3D(0.1235581, 0, 0, 0, 0.2556995, 0, 0, 0, 0.12893283, -677
 transform = Transform3D(2.3837833, 0, 0, 0, 2.7194796, 0, 0, 0, 2.6577702, -671.77167, 87.68303, -9.482611)
 
 [node name="sol" parent="." unique_id=1345536 instance=ExtResource("4_12uly")]
-transform = Transform3D(1.4397187, 0, 0, 0, 1.606955, 0, 0, 0, 1.6986097, -697.78564, 91.39016, -9.24286)
+transform = Transform3D(1.4397187, 0, 0, 0, 1.606955, 0, 0, 0, 1.6986097, -744.8779, 91.39016, -9.24286)
 
 [node name="safe_light" type="OmniLight3D" parent="." unique_id=100684925]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -677.2694, 87.773315, -9.36475)
