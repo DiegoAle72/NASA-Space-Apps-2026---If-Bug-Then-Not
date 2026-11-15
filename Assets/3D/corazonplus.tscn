@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b3dbc50a30rsb"]
+
+[ext_resource type="PackedScene" uid="uid://dm7wa42bvrura" path="res://Assets/3D/Corazon.blend" id="1_18mxs"]
+
+[node name="Corazon" unique_id=1393696603 instance=ExtResource("1_18mxs")]
+
+[node name="Light" parent="." index="10" unique_id=933529583]
+light_energy = 0.0
+omni_range = 0.0

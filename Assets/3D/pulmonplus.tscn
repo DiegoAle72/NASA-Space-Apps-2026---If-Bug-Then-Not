@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dqmvcysscdub2"]
+
+[ext_resource type="PackedScene" uid="uid://gklnfqbb8mck" path="res://Assets/3D/pulmon.blend" id="1_3lbsd"]
+
+[node name="pulmon" unique_id=394498568 instance=ExtResource("1_3lbsd")]
+
+[node name="Light" parent="." index="4" unique_id=1586060099]
+light_energy = 0.0
+omni_range = 0.0

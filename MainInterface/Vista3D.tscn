@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://by36x8mp7s75u"]
+
+[ext_resource type="PackedScene" uid="uid://bfp0rqvvrt4qm" path="res://Assets/3D/cerebroplus.tscn" id="1_6r2tk"]
+[ext_resource type="PackedScene" uid="uid://b3dbc50a30rsb" path="res://Assets/3D/corazonplus.tscn" id="2_38lh6"]
+[ext_resource type="PackedScene" uid="uid://dqmvcysscdub2" path="res://Assets/3D/pulmonplus.tscn" id="3_yvmp2"]
+[ext_resource type="PackedScene" uid="uid://bd2jfnx6qyiwb" path="res://Assets/Humano.blend" id="4_df3kb"]
+[ext_resource type="Script" uid="uid://dm5govpe702w2" path="res://MainInterface/OrbitCamera.gd" id="5_orbit"]
+
+[node name="Vista3d" type="Node3D" unique_id=1461081267]
+
+[node name="cerebro" parent="." unique_id=528526322 instance=ExtResource("1_6r2tk")]
+transform = Transform3D(-0.015876416, 0, 0.027498757, 0, 0.03175283, 0, -0.027498757, 0, -0.015876416, 0, 0.51802975, 0)
+
+[node name="Corazon" parent="." unique_id=1393696603 instance=ExtResource("2_38lh6")]
+transform = Transform3D(0.0070445244, -0.0024957901, 0.026290528, 0.0006459578, 0.027217964, 0.0024107478, -0.026400825, 0, 0.0070740785, -0.0013067126, 0.23186582, -0.02937977)
+
+[node name="pulmon" parent="." unique_id=394498568 instance=ExtResource("3_yvmp2")]
+transform = Transform3D(-3.0451792e-09, 0, 0.06966558, 0, 0.06966558, 0, -0.06966558, 0, -3.0451792e-09, -0.06184963, 0.22722924, -0.024526581)
+
+[node name="Humano" parent="." unique_id=1151863064 instance=ExtResource("4_df3kb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51802975, 0)
+
+[node name="OrbitCamera" type="Camera3D" parent="." unique_id=1243559206 node_paths=PackedStringArray("target")]
+current = true
+script = ExtResource("5_orbit")
+target = NodePath("../Humano")
+
+[node name="KeyLight" type="DirectionalLight3D" parent="." unique_id=1258296421]
+transform = Transform3D(0.8660254, -0.28678823, 0.40957603, 0, 0.81915206, 0.57357645, -0.5, -0.49673176, 0.7094065, 0, 0, 0)
+
+[node name="FillLight" type="DirectionalLight3D" parent="." unique_id=1923552833]
+transform = Transform3D(-0.8660254, 0.17101008, -0.46984637, 0, 0.9396926, 0.34202012, 0.50000006, 0.2961981, -0.81379765, 0, 0, 0)
+light_energy = 0.55

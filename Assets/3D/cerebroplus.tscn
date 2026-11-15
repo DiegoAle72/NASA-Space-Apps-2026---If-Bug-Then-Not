@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bfp0rqvvrt4qm"]
+
+[ext_resource type="PackedScene" uid="uid://jbx3u0y27hbi" path="res://Assets/3D/cerebro.blend" id="1_bnpri"]
+
+[node name="cerebro" unique_id=528526322 instance=ExtResource("1_bnpri")]
+
+[node name="Punto" parent="." index="4" unique_id=903236213]
+light_energy = 0.0
+omni_range = 0.0
+
+[node name="Punto_001" parent="." index="5" unique_id=470545276]
+light_energy = 0.0
+omni_range = 0.0
+
+[node name="Sol" parent="." index="6" unique_id=348139043]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 1.6305511, -2.222164, 0.21685743)
+light_energy = 0.0

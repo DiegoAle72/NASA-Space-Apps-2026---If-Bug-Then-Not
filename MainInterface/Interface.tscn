@@ -1,3 +1,616 @@
-[gd_scene format=3 uid="uid://b0f8irvjrojrc"]
+[gd_scene format=3 uid="uid://dt4kt7qql26mn"]
 
-[node name="Interface" type="Node2D" unique_id=2021262844]
+[ext_resource type="Theme" uid="uid://b7rp8q4pppfi8" path="res://Assets/Other/DefaultTheme1.tres" id="1_l33ob"]
+[ext_resource type="Script" uid="uid://cqy5xcijuvsjn" path="res://MainInterface/CustomTabsContainer.gd" id="2_bps3c"]
+[ext_resource type="PackedScene" uid="uid://by36x8mp7s75u" path="res://MainInterface/Vista3D.tscn" id="3_vista"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ty0te"]
+bg_color = Color(0.1613563, 0.18342489, 0.20917058, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_3ahog"]
+variation_embolden = -0.58
+spacing_glyph = 1
+
+[sub_resource type="FontVariation" id="FontVariation_bps3c"]
+variation_embolden = -0.5
+
+[sub_resource type="Gradient" id="Gradient_l33ob"]
+offsets = PackedFloat32Array(0, 0.52678573, 1)
+colors = PackedColorArray(0.23137255, 0.25882354, 0.28627452, 0.003921569, 0.21176471, 0.23137255, 0.25490198, 1, 0.23137255, 0.25882354, 0.28627452, 0.003921569)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_w4mfu"]
+gradient = SubResource("Gradient_l33ob")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ty0te"]
+texture = SubResource("GradientTexture2D_w4mfu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4mfu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="FontVariation" id="FontVariation_ty0te"]
+variation_embolden = -0.7
+
+[sub_resource type="FontVariation" id="FontVariation_w4mfu"]
+variation_embolden = -0.7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn5ri"]
+bg_color = Color(0.16862746, 0.1882353, 0.21176471, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.21176471, 0.23137255, 0.25490198, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="FontVariation" id="FontVariation_jf7oc"]
+variation_embolden = -0.5
+
+[sub_resource type="FontVariation" id="FontVariation_bn5ri"]
+variation_embolden = -0.5
+
+[node name="Interface" type="Control" unique_id=1326644317]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1952821960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l33ob")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ty0te")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=181661464]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBar" type="Control" parent="Panel/VBoxContainer" unique_id=2080898125]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/TopBar" unique_id=336970443]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l33ob")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/TopBar/Panel" unique_id=120074514]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/TopBar/Panel/HBoxContainer" unique_id=1482201262]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_l33ob")
+
+[node name="Title" type="Label" parent="Panel/VBoxContainer/TopBar/Panel/HBoxContainer/Control" unique_id=1120421509]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.92545134, 0.9346601, 0.94398904, 1)
+theme_override_fonts/font = SubResource("FontVariation_3ahog")
+theme_override_font_sizes/font_size = 24
+text = "Health Monitoring Dashboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Control2" type="Control" parent="Panel/VBoxContainer/TopBar/Panel/HBoxContainer" unique_id=2017081547]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="BottomPanel" type="Control" parent="Panel/VBoxContainer" unique_id=694972386]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel" unique_id=824727439]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 8.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer" unique_id=2042191026]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_l33ob")
+
+[node name="ContentScreen" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer" unique_id=500109282]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+offset_transform_enabled = true
+theme = ExtResource("1_l33ob")
+
+[node name="Tabs" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen" unique_id=1462739449]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_bps3c")
+
+[node name="TabSelector" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs" unique_id=1347375554]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabSelector" unique_id=1057853114]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.15
+anchor_right = 0.85
+anchor_bottom = 1.0
+offset_top = 12.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="0" type="Button" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabSelector/Buttons" unique_id=740302779]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_l33ob")
+theme_override_fonts/font = SubResource("FontVariation_bps3c")
+theme_override_font_sizes/font_size = 19
+text = "Before Mission"
+clip_text = true
+
+[node name="1" type="Button" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabSelector/Buttons" unique_id=105461506]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_l33ob")
+theme_override_fonts/font = SubResource("FontVariation_bps3c")
+theme_override_font_sizes/font_size = 19
+text = "On Mission"
+clip_text = true
+
+[node name="2" type="Button" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabSelector/Buttons" unique_id=1554453672]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_l33ob")
+theme_override_fonts/font = SubResource("FontVariation_bps3c")
+theme_override_font_sizes/font_size = 19
+text = "After Mission"
+clip_text = true
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs" unique_id=732551733]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.03
+theme_override_styles/panel = SubResource("StyleBoxTexture_ty0te")
+
+[node name="TabContainer" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs" unique_id=543014567]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 13.0
+
+[node name="TabContainer" type="TabContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer" unique_id=1232467064]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4mfu")
+current_tab = 1
+tabs_visible = false
+
+[node name="0" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer" unique_id=1477300609]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0" unique_id=790059680]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=806627612]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ty0te")
+theme_override_font_sizes/font_size = 32
+text = "Before Your Mission"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=2146641879]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ty0te")
+theme_override_font_sizes/font_size = 24
+text = "User Configuration"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=1091577438]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control" unique_id=1714085071]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control/HBoxContainer" unique_id=637347274]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Astronaut ID"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control/HBoxContainer" unique_id=698523651]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+placeholder_text = "name.surname"
+alignment = 1
+
+[node name="Control2" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=1891177676]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control2" unique_id=440988085]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_right = 0.65
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control2/HBoxContainer" unique_id=841822077]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Full Name"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control2/HBoxContainer" unique_id=319106013]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+placeholder_text = "Name SURNAME"
+alignment = 1
+
+[node name="Control3" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=1535421435]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control3" unique_id=86421338]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_right = 0.55
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control3/HBoxContainer" unique_id=363306168]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Body Mass (kg)"
+horizontal_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control3/HBoxContainer" unique_id=588548162]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 500.0
+value = 25.0
+alignment = 1
+
+[node name="Control4" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=1756063511]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control4" unique_id=1822449719]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_right = 0.53
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control4/HBoxContainer" unique_id=1293288685]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Age"
+horizontal_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control4/HBoxContainer" unique_id=1201327855]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 500.0
+value = 25.0
+alignment = 1
+
+[node name="Control5" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=1184241879]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control5" unique_id=645905886]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_right = 0.53
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control5/HBoxContainer" unique_id=1204082678]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Heart rate at rest (BPM)"
+horizontal_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control5/HBoxContainer" unique_id=979135344]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 500.0
+value = 25.0
+alignment = 1
+
+[node name="Control7" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=288708724]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control7" unique_id=1835712498]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.47
+anchor_right = 0.53
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control7/HBoxContainer" unique_id=407598773]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Oxygenation at rest (%)"
+horizontal_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control7/HBoxContainer" unique_id=990208087]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 500.0
+value = 25.0
+alignment = 1
+
+[node name="Control6" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=263733963]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control6" unique_id=1090987561]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_right = 0.6
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control6/HBoxContainer" unique_id=690211591]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Mission Start Date"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control6/HBoxContainer" unique_id=1328673800]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+placeholder_text = "MM/DD/YYYY"
+alignment = 1
+
+[node name="Control8" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=1845270242]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control8" unique_id=106060269]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_right = 0.55
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control8/HBoxContainer" unique_id=1504505674]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Birth Sex"
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control8/HBoxContainer" unique_id=1254280106]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+item_count = 2
+popup/item_0/text = "Male"
+popup/item_0/id = 0
+popup/item_1/text = "Female"
+popup/item_1/id = 1
+
+[node name="1" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer" unique_id=381037372]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1" unique_id=773655371]
+custom_minimum_size = Vector2(0, 700)
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_l33ob")
+theme_override_styles/panel = SubResource("StyleBoxFlat_bn5ri")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel" unique_id=873154214]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer" unique_id=923891752]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer" unique_id=1167551329]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control" unique_id=1252667831]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l33ob")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control/Panel" unique_id=539192057]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("FontVariation_jf7oc")
+theme_override_font_sizes/font_size = 20
+text = "Astronaut Status"
+horizontal_alignment = 1
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control/Panel" unique_id=1412533543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control/Panel/SubViewportContainer" unique_id=2015018264]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(707, 432)
+render_target_update_mode = 4
+
+[node name="Vista3d" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control/Panel/SubViewportContainer/SubViewport" unique_id=1907492269 instance=ExtResource("3_vista")]
+
+[node name="Control2" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer" unique_id=246012808]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2" unique_id=1178880350]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel" unique_id=249984052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer" unique_id=917226680]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("FontVariation_bn5ri")
+theme_override_font_sizes/font_size = 20
+text = "Details"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer" unique_id=1841500423]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer" unique_id=1686850487]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1873229668]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer" unique_id=1473472019]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/Panel/VBoxContainer/Control" unique_id=596772151]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l33ob")
+
+[node name="2" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer" unique_id=1585272247]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
