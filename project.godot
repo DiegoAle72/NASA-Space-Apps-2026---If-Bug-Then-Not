@@ -35,6 +35,10 @@ folder_colors={
 "res://MainInterface/": "green"
 }
 
+[filesystem]
+
+import/blender/enabled=false
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
