@@ -10,6 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+var ISSCosoMessage = ""
 
 var Settings = {
 	"mass" = 0,

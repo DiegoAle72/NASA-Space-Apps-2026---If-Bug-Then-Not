@@ -34,6 +34,13 @@ variation_embolden = -0.7
 [sub_resource type="FontVariation" id="FontVariation_w4mfu"]
 variation_embolden = -0.7
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5fi1"]
+bg_color = Color(0.18665501, 0.1491, 0.21, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
 [sub_resource type="FontVariation" id="FontVariation_mj5uc"]
 variation_embolden = -0.7
 
@@ -66,6 +73,42 @@ variation_embolden = -0.5
 
 [sub_resource type="FontVariation" id="FontVariation_aq13o"]
 variation_embolden = -0.5
+
+[sub_resource type="FontVariation" id="FontVariation_6flrp"]
+variation_embolden = -0.7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ahog"]
+bg_color = Color(0.16862746, 0.1882353, 0.21176471, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.20386189, 0.2187157, 0.2484245, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="FontVariation" id="FontVariation_e84fe"]
+variation_embolden = -0.5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k5oav"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aq13o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ge8tr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mj5uc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6flrp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhykx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Interface" type="Control" unique_id=1326644317]
 layout_mode = 3
@@ -242,7 +285,7 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_w4mfu")
-current_tab = 1
+current_tab = 2
 tabs_visible = false
 
 [node name="0" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer" unique_id=1477300609]
@@ -491,7 +534,33 @@ popup/item_0/id = 0
 popup/item_1/text = "Female"
 popup/item_1/id = 1
 
+[node name="Control9" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer" unique_id=2140843747]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control9" unique_id=221513608]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.45
+anchor_right = 0.55
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Upload medical records" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control9/HBoxContainer" unique_id=1565656005]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_w4mfu")
+text = "Upload medical records"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/0/VBoxContainer/Control9/HBoxContainer" unique_id=1298734807]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_b5fi1")
+text = "  Upload Files  "
+
 [node name="1" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer" unique_id=381037372]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -578,7 +647,7 @@ own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(686, 432)
-render_target_update_mode = 4
+render_target_update_mode = 0
 
 [node name="Vista3d" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control/Panel/SubViewportContainer/SubViewport" unique_id=1907492269 instance=ExtResource("3_vista")]
 
@@ -634,7 +703,8 @@ custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_baesq")
 theme_override_font_sizes/font_size = 18
-text = "No Selection"
+text = "Anomalies on the heartbeat have been detected: an increase in heartbear, this could signal overexhaustion."
+autowrap_mode = 3
 
 [node name="Label3" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=902957333]
 layout_mode = 2
@@ -645,7 +715,7 @@ text = "Requires medical expert?"
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_baesq")
 theme_override_font_sizes/font_size = 18
-text = "No Selection"
+text = "No"
 
 [node name="Label4" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/HBoxContainer/Control2/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1252315453]
 layout_mode = 2
@@ -656,7 +726,7 @@ text = "Suggestions:"
 layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_baesq")
 theme_override_font_sizes/font_size = 18
-text = "No Selection"
+text = "Refrain from doing physically demanding tesks for the next 24h"
 
 [node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer" unique_id=1473472019]
 layout_mode = 2
@@ -739,7 +809,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_aq13o")
-text = "High importance: Refrain from leaving the ISS for the next 13h"
+text = "Medium importance: You are urged to add 2 aditional hours to your sleep schedule "
 vertical_alignment = 1
 
 [node name="Button3" type="Button" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/VBoxContainer/Control/Panel/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=938953427]
@@ -778,9 +848,90 @@ grow_vertical = 2
 
 [node name="GeminiChat" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/1/VBoxContainer/Control/Panel/HBoxContainer/Control/Panel" unique_id=1165374204 instance=ExtResource("4_baesq")]
 layout_mode = 1
-extra_context = "You are a medical advisor for a Health Monitoring Dashboard for astronauts while they , you should"
+extra_context = "You are a medical advisor for a Health Monitoring Dashboard for astronauts while they , you should advise them on what to do and answer their questions about their issues.
+This astronaut's issues are:
+- A heartbeat anomaly has been detected, heart rate has been rising for the last 2 hours, this could indicate overexhaustion, it does not require consulting a medical professional, the astronaut should refrain from doing any demanding physical activity for the next 24h
+- Disruption in speech has been detected, this could be a sign of sleep depravation, this does not require consulting a medical professional, however, if the astronaut starts to feel unwell, he should consult their Crew Medical Officer, the astronaut is urged to add 2 hours to their sleep schedule"
 
 [node name="2" type="ScrollContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer" unique_id=1585272247]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2" unique_id=1001313868]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control" unique_id=1781169351]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_right = 0.7
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control/VBoxContainer" unique_id=1484710587]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_6flrp")
+theme_override_font_sizes/font_size = 32
+text = "After Mission"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control/VBoxContainer" unique_id=422590498]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control/VBoxContainer" unique_id=325614222]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ahog")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control/VBoxContainer/Panel" unique_id=888745560]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control/VBoxContainer/Panel/HBoxContainer" unique_id=737495095]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_e84fe")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k5oav")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aq13o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ge8tr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mj5uc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6flrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bhykx")
+text = "  Make sure you use pressure suits"
+
+[node name="Panel2" type="Panel" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control/VBoxContainer" unique_id=55048733]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3ahog")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control/VBoxContainer/Panel2" unique_id=785567463]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/BottomPanel/HBoxContainer/ContentScreen/Tabs/TabContainer/TabContainer/2/Control/VBoxContainer/Panel2/HBoxContainer" unique_id=973317105]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_e84fe")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_k5oav")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aq13o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ge8tr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_mj5uc")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6flrp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_bhykx")
+text = "Complete 3 monitored hours at rest"

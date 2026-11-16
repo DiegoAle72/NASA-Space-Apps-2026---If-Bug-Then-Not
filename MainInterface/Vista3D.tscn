@@ -31,3 +31,39 @@ transform = Transform3D(0.8660254, -0.28678823, 0.40957603, 0, 0.81915206, 0.573
 [node name="FillLight" type="DirectionalLight3D" parent="." unique_id=1923552833]
 transform = Transform3D(-0.8660254, 0.17101008, -0.46984637, 0, 0.9396926, 0.34202012, 0.50000006, 0.2961981, -0.81379765, 0, 0, 0)
 light_energy = 0.55
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1146262374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012990907, 0, -0.008467462)
+
+[node name="Label3D" type="Label3D" parent="Node3D" unique_id=1964472845]
+billboard = 1
+no_depth_test = true
+render_priority = 1
+modulate = Color(1, 0.2, 0, 1)
+text = "!"
+font_size = 20
+outline_size = 0
+
+[node name="Node3D2" type="Node3D" parent="." unique_id=2004258223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012990907, 0.23258026, -0.008467462)
+
+[node name="Label3D" type="Label3D" parent="Node3D2" unique_id=1029442471]
+billboard = 1
+no_depth_test = true
+render_priority = 1
+modulate = Color(1, 0.2, 0, 1)
+text = "!"
+font_size = 20
+outline_size = 0
+
+[node name="Node3D3" type="Node3D" parent="." unique_id=960201227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0012990907, 0.502553, -0.008467462)
+
+[node name="Label3D" type="Label3D" parent="Node3D3" unique_id=1542828945]
+billboard = 1
+no_depth_test = true
+render_priority = 1
+modulate = Color(1, 0.2, 0, 1)
+text = "!"
+font_size = 20
+outline_size = 0

@@ -32,3 +32,4 @@ func _process(_delta):
 		var time_to_get_to_safety = distance_from_safety / astronaut_speed
 		label.text = "Your distance from safe point of the ISS is: %s meters and you will get there in %s seconds" \
 			% [distance_from_safety, time_to_get_to_safety]
+	GlobalData.ISSCosoMessage = label.text

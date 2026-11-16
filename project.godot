@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+WearableData="*uid://d17h157yohl5f"
 GlobalData="*uid://67ju1efqs0to"
 
 [display]

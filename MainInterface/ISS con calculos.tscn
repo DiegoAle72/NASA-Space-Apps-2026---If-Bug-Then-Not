@@ -5,12 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://38lvbtb7qw3w" path="res://Assets/3D/Tierra wtf.fbx" id="3_gmol8"]
 [ext_resource type="PackedScene" uid="uid://8un0wep8nr6m" path="res://Assets/3D/sol.glb" id="4_12uly"]
 [ext_resource type="Script" uid="uid://cgcj1m4os1gvx" path="res://MainInterface/label.gd" id="5_l52ib"]
+[ext_resource type="Script" uid="uid://dm5govpe702w2" path="res://MainInterface/OrbitCamera.gd" id="6_orbit"]
 
 [node name="Node3D" type="Node3D" unique_id=175062718]
 script = ExtResource("1_3qqnt")
 
 [node name="ISS con nave N1 Crew-11 Dragon" parent="." unique_id=540225889 instance=ExtResource("2_l52ib")]
-transform = Transform3D(0.1235581, 0, 0, 0, 0.2556995, 0, 0, 0, 0.12893283, -677.6161, 87.670006, -8.755193)
+transform = Transform3D(0.1235581, 0, 0, 0, 0.2556995, 0, 0, 0, 0.12893283, -676.77167, 87.68303, -9.466214)
 
 [node name="Tierra wtf" parent="." unique_id=588992726 instance=ExtResource("3_gmol8")]
 transform = Transform3D(2.3837833, 0, 0, 0, 2.7194796, 0, 0, 0, 2.6577702, -671.77167, 87.68303, -9.482611)
@@ -23,9 +24,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -677.2694, 87.773315, -9.3647
 light_color = Color(0.07871375, 0.75369465, 7.70092e-07, 1)
 light_energy = 1000.0
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1483135637]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1483135637 node_paths=PackedStringArray("target")]
 transform = Transform3D(-0.99847597, -0.021237278, 0.050935566, -0.017743308, 0.99752116, 0.06809318, -0.05225545, 0.067085646, -0.9963779, -678.7888, 92.083786, -64.263855)
+current = true
 fov = 29.0
+script = ExtResource("6_orbit")
+target = NodePath("../Tierra wtf")
+zoom = 0.5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2082915779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -693.1984, 87.435875, -6.51717)
